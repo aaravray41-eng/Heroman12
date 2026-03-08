@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gothic Whimsy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+background:linear-gradient(#0f0f1a,#1c1c2b);
+font-family:'Poppins';
+color:white;
+text-align:center;
+}
+
+/* Header */
+
+header{
+font-family:'Creepster';
+font-size:50px;
+padding:25px;
+letter-spacing:3px;
+color:#f2d3a5;
+text-shadow:3px 3px 10px black;
+}
+
+/* Navigation */
+
+nav{
+display:flex;
+justify-content:center;
+gap:20px;
+padding:20px;
+}
+
+nav button{
+background:#3b2b3c;
+color:#f3e5c5;
+border:none;
+padding:12px 25px;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+nav button:hover{
+background:#6d3f5b;
+transform:scale(1.1);
+}
+
+/* Layout */
+
+.container{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:30px;
+flex-wrap:wrap;
+}
+
+.main{
+background:#24313a;
+width:600px;
+padding:30px;
+border-radius:20px;
+box-shadow:0px 0px 20px black;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;}
+}
+
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+}
+
+/* Sidebar */
+
+.sidebar{
+width:220px;
+}
+
+.box{
+background:#3b2c2c;
+margin-bottom:20px;
+padding:20px;
+border-radius:15px;
+}
+
+/* Character cards */
+
+.characters{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:20px;
+}
+
+.card{
+background:#1f1f2e;
+padding:20px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+background:#33334a;
+}
+
+/* Contact form */
+
+input,textarea{
+width:90%;
+padding:10px;
+margin:10px;
+border:none;
+border-radius:8px;
+}
+
+button.send{
+background:#5a2e45;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+footer{
+margin-top:40px;
+padding:20px;
+background:#111;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>🦇 Gothic Whimsy</header>
+
+<nav>
+<button onclick="page('home')">Home</button>
+<button onclick="page('gallery')">Gallery</button>
+<button onclick="page('story')">Story</button>
+<button onclick="page('characters')">Characters</button>
+<button onclick="page('contact')">Contact</button>
+</nav>
+
+<div class="container">
+
+<div class="main" id="content">
+
+<h2>Welcome to the Playfully Macabre</h2>
+
+<p>A strange gothic world of mystery, characters and stories.</p>
+
+</div>
+
+<div class="sidebar">
+
+<div class="box">
+<h3>News</h3>
+<p>🦇 New character coming soon</p>
+<p>🎭 Gallery updated</p>
+</div>
+
+<div class="box">
+<h3>Events</h3>
+<p>Halloween Festival</p>
+<p>Dark Story Night</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Gothic Whimsy
+</footer>
+
+<script>
+
+function page(name){
+
+let content=document.getElementById("content");
+
+if(name=="home"){
+content.innerHTML=`
+<h2>Welcome to the Playfully Macabre</h2>
+<p>A strange gothic world full of dark fantasy and playful horror.</p>
+`;
+}
+
+if(name=="gallery"){
+content.innerHTML=`
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="https://picsum.photos/200?1">
+<img src="https://picsum.photos/200?2">
+<img src="https://picsum.photos/200?3">
+<img src="https://picsum.photos/200?4">
+<img src="https://picsum.photos/200?5">
+<img src="https://picsum.photos/200?6">
+</div>
+`;
+}
+
+if(name=="story"){
+content.innerHTML=`
+<h2>The Story</h2>
+<p>In a forgotten gothic town, strange characters live mysterious lives.
+Dark corridors, haunted towers, and playful ghosts fill the night.</p>
+`;
+}
+
+if(name=="characters"){
+content.innerHTML=`
+<h2>Characters</h2>
+<div class="characters">
+<div class="card">🧛 Victor the Vampire</div>
+<div class="card">🧙 Luna the Witch</div>
+<div class="card">👻 Milo the Ghost</div>
+<div class="card">🦇 Shade the Bat</div>
+</div>
+`;
+}
+
+if(name=="contact"){
+content.innerHTML=`
+<h2>Contact</h2>
+<input placeholder="Your Name"><br>
+<input placeholder="Email"><br>
+<textarea placeholder="Message"></textarea><br>
+<button class="send">Send</button>
+`;
+}
+
+}
+
+</script>
+
+</body>
+</html>
